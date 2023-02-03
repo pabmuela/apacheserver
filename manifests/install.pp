@@ -1,6 +1,6 @@
 # @summary
 #
-# Install Apache package
+# Install Apache package RHEL
 
 class apacheserver::install {
   package { 'httpd':
