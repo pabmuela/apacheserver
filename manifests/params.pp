@@ -2,7 +2,7 @@
 # Operating systems related variables
 class apacheserver::params {
   $install_ensure = 'present'
-  case $::osfamily {
+  case $facts.os.name {
     'RedHat': {
       $install_name = 'httpd'
     }

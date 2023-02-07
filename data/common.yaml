@@ -1,2 +1,3 @@
 ---
 apacheserver::install_ensure: 'present'
+apacheserver::install_name: 'httpd'

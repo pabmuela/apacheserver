@@ -2,8 +2,8 @@
 #
 # Install Apache package RHEL
 class apacheserver::install {
-  package { $apacheserver::params::install_name:
-    ensure => $apacheserver::params::install_ensure,
+  package { $apacheserver::install_name:
+    ensure => $apacheserver::install_ensure,
   }
 }
 
