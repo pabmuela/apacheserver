@@ -1,3 +1,5 @@
 ---
 apacheserver::install_ensure: 'present'
 apacheserver::install_name: 'httpd'
+apacheserver::config_ensure: 'file'
+apacheserver::config_path: '/etc/httpd/conf/httpd.conf'
