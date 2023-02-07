@@ -9,5 +9,5 @@ class apacheserver::service {
     ensure     => $apacheserver::service_ensure,
     enable     => $apacheserver::service_enable,
     hasrestart => true,
-  }  
+  }
 }
