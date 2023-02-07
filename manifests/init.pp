@@ -4,6 +4,9 @@
 #
 # @example
 #   include apacheserver
-class apacheserver {
+class apacheserver (
+  String $install_name,
+  String $install_ensure,
+) {
   include apacheserver::install
 }

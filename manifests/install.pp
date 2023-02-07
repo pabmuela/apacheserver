@@ -1,11 +1,18 @@
 # @summary
 #
 # Install Apache package RHEL
-class apacheserver::install (
-  $install_name = $apacheserver::params::install_name,
-  $install_ensure = $apacheserver::params::install_ensure,
-) inherits apacheserver::params {
-  package { "${install_name}":
-    ensure => $install_ensure,
+class apacheserver::install {
+  package { $apacheserver::params::install_name:
+    ensure => $apacheserver::params::install_ensure,
   }
 }
+
+#NTP module, install, sample
+
+# class ntp::install {
+#   if $ntp::package_manage {
+#     package { $ntp::package_name:
+#       ensure => $ntp::package_ensure,
+#     }
+#   }
+# }
