@@ -1,0 +1,15 @@
+# <%# Virtual hosts template -%>
+<VirtualHost *:<%= $port %>>
+    ServerName <%= $subdomain %>.<%= $facts[fqdn] %>
+    ServerAlias <%= $subdomain %>
+<% if $admin =~ String[1] { %>
+    ServerAdmin <%= $admin %>
+<% } %>
+    DocumentRoot <%= $docroot %>
+</VistualHost>
+# <VirtualHost *:80>
+#     ServerName subdomain.client.com.uy
+#     ServerAlias subdomain
+#     ServerAdmin admin@client.com.uy
+#     DocumentRoot /var/www/subdomain/html
+# </VistualHost>

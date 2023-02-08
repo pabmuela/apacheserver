@@ -9,9 +9,12 @@ class apacheserver (
   String $install_ensure,
   String $config_ensure,
   String $config_path,
-  Enum["stopped", "running"] $service_ensure,
+  Enum["running", "stopped"] $service_ensure,
   String $service_name,
   Boolean $service_enable = true,
+  String $vhosts_dir,
+  String $vhosts_owner,
+  String $vhosts_group,
 ) {
   contain apacheserver::install
   contain apacheserver::config

@@ -1,8 +1,11 @@
 ---
-apacheserver::install_ensure: 'present'
+#apacheserver::install_ensure: 'present'
 apacheserver::install_name: 'httpd'
-apacheserver::config_ensure: 'file'
+#apacheserver::config_ensure: 'file'
 apacheserver::config_path: '/etc/httpd/conf/httpd.conf'
 apacheserver::service_name: 'httpd'
-apacheserver::service_ensure: 'running'
-apacheserver::service_enable: true
+#apacheserver::service_ensure: 'running'
+#apacheserver::service_enable: true
+apacheserver::vhosts_dir: '/etc/httpd/conf.d'
+apacheserver::vhosts_owner: "root"
+apacheserver::vhosts_group: "root"

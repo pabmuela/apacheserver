@@ -4,7 +4,9 @@
   "author": "Pablo M",
   "summary": "Test install Apache",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "y",
+  "project_page": "y",
+  "issues_url": "y",
   "dependencies": [
 
   ],
