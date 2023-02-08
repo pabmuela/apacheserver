@@ -1,5 +1,12 @@
+<%- | Integer $port,
+      String  $subdomain,
+      String  $admin,
+      String  $docroot,
+      String  $fqdn
+| -%>
+
 <VirtualHost *:<%= $port %>>
-    ServerName <%= $subdomain %>.<%= $facts[fqdn] %>
+    ServerName <%= $subdomain %>.<%= $fqdn %>
     ServerAlias <%= $subdomain %>
 <% if $admin =~ String[1] { %>
     ServerAdmin <%= $admin %>

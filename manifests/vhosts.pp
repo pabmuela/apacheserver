@@ -5,21 +5,31 @@
 # @example
 #   apacheserver::vhosts { 'namevar': }
 define apacheserver::vhosts (
-  Integer    $port,
-  String[1]  $subdomain,
-  String     $admin,
-  String[1]  $docroot, 
+  Integer $port,
+  String  $subdomain,
+  String  $admin,
+  String  $docroot,
 ) {
   file { "${docroot}":
     ensure  => 'directory',
     owner   => $apacheserver::vhosts_owner,
     group   => $apacheserver::vhosts_group,
   }
-  file { "${apacheserver::vhost_dir}/${subdomain}.conf":
+
+  $vhosts_hash = {
+    'port'      => $port,
+    'subdomain' => $subdomain,
+    'admin'     => $admin,
+    'docroot'   => $docroot,
+    'fqdn'      => $facts['fqdn'],
+  }
+
+  file { "${apacheserver::vhosts_dir}/${subdomain}.conf":
     ensure  => file,
     owner   => $apacheserver::vhosts_owner,
     group   => $apacheserver::vhosts_group,
     mode    => '0644',
-    content => epp('apacheserver/vhosts.conf.epp', {'port' => $port, 'subdomain' => $subdomain, 'admin' => $admin, 'docroot' => $docroot}),
+    content => epp('apacheserver/vhosts.conf.epp', $vhosts_hash),
     notify  => Service[$apacheserver::service_name],
   }
+}
