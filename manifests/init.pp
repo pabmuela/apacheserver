@@ -12,7 +12,7 @@ class apacheserver (
   Enum["running", "stopped"] $service_ensure,
   String $service_name,
   Boolean $service_enable = true,
-  String $vhosts_dir,
+  String $vhost_dir,
   String $vhosts_owner,
   String $vhosts_group,
 ) {

@@ -1,4 +1,3 @@
-# <%# Virtual hosts template -%>
 <VirtualHost *:<%= $port %>>
     ServerName <%= $subdomain %>.<%= $facts[fqdn] %>
     ServerAlias <%= $subdomain %>
